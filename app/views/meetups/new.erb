@@ -1,0 +1,36 @@
+<div class = "grid-container">
+  <div class = "row">
+    <div class = "small-6 columns">
+      <h1>Create a new meetup!</h1>
+    </div>
+
+    <div class = "small-6 columns">
+      <form action="/meetups/new" method="post">
+        <label for="name">Name:</label>
+        <input type="text" value="<%= @name  %>"
+          id="name" name="name">
+        <br>
+
+        <label for "location">Location:</label>
+        <input type="text" value="<%= @location %>"
+          id="location" name="location">
+        <br>
+
+        <label for="description">Description:</label>
+        <input type="text" value="<%= @description  %>"
+          id="description" name="description">
+        <br>
+
+        <button type="submit" id = "submit" name = "submit">
+          Create!
+        </button>
+      </form>
+    </div>
+
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
